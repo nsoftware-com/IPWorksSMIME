@@ -5,14 +5,14 @@ The provided sample projects offer a concise yet effective demonstration of the 
 IPWorks S/MIME 2022 libraries for the corresponding edition are required to run these samples.  Free download from: [https://www.nsoftware.com/ipworkssmime](https://www.nsoftware.com/ipworkssmime)
 
 ## Reference Documentation
-[Java](https://cdn.nsoftware.com/help/IMH/java/)
-[Javascript](https://cdn.nsoftware.com/help/IMH/js/)
-[.NET](https://cdn.nsoftware.com/help/IMH/cs/)
-[Python](https://cdn.nsoftware.com/help/IMH/py/)
-[PHP](https://cdn.nsoftware.com/help/IMH/php/)
-[C++](https://cdn.nsoftware.com/help/IMH/cpp/)
-[macOS](https://cdn.nsoftware.com/help/IMH/mac/)
-[iOS](https://cdn.nsoftware.com/help/IMH/mac/)
+* [Java Edition](https://cdn.nsoftware.com/help/IMH/java/)
+* [Javascript Edition](https://cdn.nsoftware.com/help/IMH/js/)
+* [.NET Edition](https://cdn.nsoftware.com/help/IMH/cs/)
+* [Python Edition](https://cdn.nsoftware.com/help/IMH/py/)
+* [PHP Edition](https://cdn.nsoftware.com/help/IMH/php/)
+* [C++ Edition](https://cdn.nsoftware.com/help/IMH/cpp/)
+* [macOS Edition](https://cdn.nsoftware.com/help/IMH/mac/)
+* [iOS Edition](https://cdn.nsoftware.com/help/IMH/mac/)
 
 ## Sample Projects
 | Sample Project | Description |
