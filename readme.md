@@ -6,11 +6,12 @@ IPWorks S/MIME 2022 libraries for the corresponding edition are required to run 
 
 ## Reference Documentation
 * [Java Edition](https://cdn.nsoftware.com/help/IMH/java/)
-* [Javascript Edition](https://cdn.nsoftware.com/help/IMH/js/)
 * [.NET Edition](https://cdn.nsoftware.com/help/IMH/cs/)
+* [JavaScript Edition](https://cdn.nsoftware.com/help/IMH/js/)
 * [Python Edition](https://cdn.nsoftware.com/help/IMH/py/)
 * [PHP Edition](https://cdn.nsoftware.com/help/IMH/php/)
 * [C++ Edition](https://cdn.nsoftware.com/help/IMH/cpp/)
+* [Delphi Edition](https://cdn.nsoftware.com/help/IMH/dlp/)
 * [macOS Edition](https://cdn.nsoftware.com/help/IMH/mac/)
 * [iOS Edition](https://cdn.nsoftware.com/help/IMH/mac/)
 
