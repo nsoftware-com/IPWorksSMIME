@@ -23,6 +23,7 @@ IPWorks S/MIME 2022 libraries for the corresponding edition are required to run 
 | [SMIME](./IPWorks%20S%2FMIME%20Samples/SMIME) | Shows how to use the features of the S/MIME object to encrypt, sign, decrypt, and verify. |
 | [Sign Email](./IPWorks%20S%2FMIME%20Samples/Sign%20Email) | Demonstrates how to use the SSMTP object to send signed emails. |
 | [Sign and Encrypt Email](./IPWorks%20S%2FMIME%20Samples/Sign%20and%20Encrypt%20Email) | Demonstrates how to use the SSMTP object to send encrypted and/or signed emails. |
+| [Sign and Encrypt HTML Email](./IPWorks%20S%2FMIME%20Samples/Sign%20and%20Encrypt%20HTML%20Email) | Demonstrates the use of the SHTMLMailer component. |
 
 ## Support
 If you have questions or need help, please contact support@nsoftware.com or explore other support options 
