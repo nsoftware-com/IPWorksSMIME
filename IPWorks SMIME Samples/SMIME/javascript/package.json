@@ -8,7 +8,7 @@
   "main": "smime.js",
   "dependencies": {
     "full-icu": "*",
-    "ipworkssmime": "^22.0.8733"
+    "ipworkssmime": "^22.0.8858"
   },
   "scripts": {
     "smime": "node smime.js"
