@@ -10,26 +10,10 @@ struct ContentView: View, SMIMEDelegate {
     var certmgr = CertMgr()
     
     func setCert() {
-        smime.certStoreType = SmimeCertStoreTypes.cstPFXFile
-        smime.certStore = "/Applications/IPWorks SMIME 2022 macOS Edition/demos/SMIME/testcert.pfx"
-        smime.certStorePassword = "password"
-        
-        do{
-            try smime.setCertSubject(certSubject: "*")
-        } catch {
-            print("Error loading certificate: \(error)")
-        }
-        certmgr.certStoreType = CertStoreTypes.cstPublicKeyFile
-        certmgr.certStore = "/Applications/IPWorks SMIME 2022 macOS Edition/demos/SMIME/testcert.cer"
-        certmgr.certStorePassword = "password"
-        
-        do{
-            try certmgr.setCertSubject(certSubject: "*")
-            print(certmgr.certEncodedB)
-            try smime.addRecipientCert(certEncoded: certmgr.certEncodedB)
-        } catch {
-            print("Error loading certificate: \(error)")
-        }
+        smime.cert = Certificate(storeType: CertStoreTypes.cstPFXFile, store: "/Applications/IPWorks SMIME 2024 macOS Edition/demos/SMIME/testcert.pfx", storePassword: "password", subject: "*")
+
+        smime.recipientCerts.append(Certificate(storeType: CertStoreTypes.cstAuto, store: "/Applications/IPWorks SMIME 2024 macOS Edition/demos/SMIME/testcert.cer", storePassword: "", subject: "*"))
+        print(smime.recipientCerts[0])
     }
 
     var documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/"
@@ -260,9 +244,6 @@ struct ContentView: View, SMIMEDelegate {
         try smime.reset()
         smime.inputMessageHeadersString = inputheaders
         smime.inputMessage = inputmessage
-        let certmgr = CertMgr()
-        try certmgr.readCertificate(fileName: "../testcert.cer")
-        try smime.addRecipientCert(certEncoded: certmgr.certEncodedB)
         self.setCert()
         try smime.decryptAndVerifySignature()
         outputheaders += smime.outputMessageHeadersString

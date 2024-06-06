@@ -1,5 +1,5 @@
 /*
- * IPWorks S/MIME 2022 JavaScript Edition - Sample Project
+ * IPWorks S/MIME 2024 JavaScript Edition - Sample Project
  *
  * This sample project demonstrates the usage of IPWorks S/MIME in a 
  * simple, straightforward way. It is not intended to be a complete 

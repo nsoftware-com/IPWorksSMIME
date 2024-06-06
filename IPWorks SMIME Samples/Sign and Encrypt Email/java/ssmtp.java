@@ -1,5 +1,5 @@
 /*
- * IPWorks S/MIME 2022 Java Edition - Sample Project
+ * IPWorks S/MIME 2024 Java Edition - Sample Project
  *
  * This sample project demonstrates the usage of IPWorks S/MIME in a 
  * simple, straightforward way. It is not intended to be a complete 
@@ -24,8 +24,8 @@ public class ssmtp {
   //Vector<String> al;
   boolean quit;
   int index;
-  Ssmtp ssmtp1;
-  Certmgr certmgr;
+  SSMTP ssmtp1;
+  CertMgr certmgr;
   public ssmtp() {
     al = new Vector();
     //al = new Vector<String>();
@@ -35,9 +35,9 @@ public class ssmtp {
 
   public void go() {
     try {
-      certmgr = new Certmgr();
-      ssmtp1 = new Ssmtp();
-      certmgr.addCertmgrEventListener(new CertMgrEvents(this));
+      certmgr = new CertMgr();
+      ssmtp1 = new SSMTP();
+      certmgr.addCertMgrEventListener(new CertMgrEvents(this));
       ssmtp1.resetHeaders();
       ssmtp1.setTimeout(30);
       System.out.print("SMTP Server: ");
@@ -64,7 +64,7 @@ public class ssmtp {
       go();
     }
     catch (IPWorksSMIMEException ex) {
-      System.out.println("IPWorks exception thrown: " + ex.getCode() + " [" +
+      System.out.println("IPWorksSMIMEException thrown: " + ex.getCode() + " [" +
                          ex.getMessage() + "].");
     }
     catch (Exception ex) {
@@ -158,7 +158,7 @@ public class ssmtp {
 
     }
     catch (IPWorksSMIMEException ex) {
-      System.out.println("IPWorks exception thrown: " + ex.getCode() + " [" +
+      System.out.println("IPWorksSMIMEException thrown: " + ex.getCode() + " [" +
                          ex.getMessage() + "].");
     }
     catch (Exception ex) {
@@ -166,45 +166,45 @@ public class ssmtp {
     }
   }
 
-  public void certList(CertmgrCertListEvent args) {
+  public void certList(CertMgrCertListEvent args) {
     al.add(args.certSubject); //jdk1.5 should throw a warning here because of typed vectors in 1.5 (see vector definitons above)
     index++;
     System.out.println(index + ". " + args.certSubject);
   }
 
-  public void error(CertmgrErrorEvent args) {
+  public void error(CertMgrErrorEvent args) {
     System.out.println("CertMgr error: " + args.errorCode + " [" +
                        args.description + "].");
   }
 }
 
-class CertMgrEvents implements CertmgrEventListener{
+class CertMgrEvents implements CertMgrEventListener{
 		ssmtp instance;
   public CertMgrEvents(ssmtp instance) {
     this.instance = instance;
   }
 
-  public void certChain(CertmgrCertChainEvent args) {
+  public void certChain(CertMgrCertChainEvent args) {
 
   }
 
-  public void certList(CertmgrCertListEvent args) {
+  public void certList(CertMgrCertListEvent args) {
     instance.certList(args);
   }
 
-  public void error(CertmgrErrorEvent args) {
+  public void error(CertMgrErrorEvent args) {
     instance.error(args);
   }
 
-  public void keyList(CertmgrKeyListEvent args) {
+  public void keyList(CertMgrKeyListEvent args) {
 
   }
 
-  public void storeList(CertmgrStoreListEvent args) {
+  public void storeList(CertMgrStoreListEvent args) {
 
   }
   
-  public void log(CertmgrLogEvent args){}
+  public void log(CertMgrLogEvent args){}
 }
 
 class ConsoleDemo {
@@ -228,15 +228,13 @@ class ConsoleDemo {
     System.out.print(label + punctuation + " ");
     return input();
   }
-
-  static String prompt(String label, String punctuation, String defaultVal)
-  {
-	System.out.print(label + " [" + defaultVal + "] " + punctuation + " ");
-	String response = input();
-	if(response.equals(""))
-		return defaultVal;
-	else
-		return response;
+  static String prompt(String label, String punctuation, String defaultVal) {
+      System.out.print(label + " [" + defaultVal + "] " + punctuation + " ");
+      String response = input();
+      if (response.equals(""))
+        return defaultVal;
+      else
+        return response;
   }
 
   static char ask(String label) {
